@@ -1,5 +1,7 @@
-const Car = require("../src/Car");
-const Race = require("../src/Race");
+const RaceModule = await import("../src/Race.js");
+const Race = RaceModule.default;
+const CarModule = await import("../src/Car.js");
+const Car = CarModule.default;
 
 describe("Car", () => {
   test("move: true면 전진, false면 정지", () => {
@@ -25,12 +27,12 @@ describe("Race", () => {
     race.run(1);
 
     const snap = race.roundResults[0];
-    expect(snap[0].pos).toBe(0); // 3 → 정지
-    expect(snap[1].pos).toBe(1); // 4 → 전진
+    expect(snap[0].pos).toBe(0);
+    expect(snap[1].pos).toBe(1);
   });
 
   test("우승자 복수", () => {
-    const seq = [9, 9, 9, 9]; // 모두 전진
+    const seq = [9, 9, 9, 9];
     let i = 0;
     const rng = () => {
       const v = seq[i % seq.length];

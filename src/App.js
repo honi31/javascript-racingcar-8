@@ -1,11 +1,9 @@
-const { Console, Random } = require("@woowacourse/mission-utils");
-const {
-  parseNames,
-  parseRounds,
-  errorWithPrefix,
-} = require("./src/validation");
-const { lineOf, winnersLine } = require("./src/format");
-const Race = require("./src/Race");
+import { MissionUtils } from "@woowacourse/mission-utils";
+import { parseNames, parseRounds, errorWithPrefix } from "./validation.js";
+import { lineOf, winnersLine } from "./format.js";
+import Race from "./Race.js";
+
+const { Console, Random } = MissionUtils;
 
 class App {
   async run() {

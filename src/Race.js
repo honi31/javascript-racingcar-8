@@ -1,6 +1,6 @@
-const Car = require("./Car");
+import Car from "./Car.js";
 
-class Race {
+export default class Race {
   constructor(names, rng) {
     this.cars = names.map((n) => new Car(n));
     this.rng = rng;
@@ -40,5 +40,3 @@ class Race {
     return result;
   }
 }
-
-module.exports = Race;
