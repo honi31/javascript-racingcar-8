@@ -43,10 +43,11 @@ class App {
     } catch (err) {
       if (err && err.message && String(err.message).startsWith("[ERROR]")) {
         Console.print(err.message);
-        return;
+        throw err;
       }
 
       Console.print("[ERROR] 예기치 못한 오류가 발생했습니다.");
+      throw err;
     }
   }
 }
