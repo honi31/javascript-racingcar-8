@@ -1,7 +1,12 @@
-const RaceModule = await import("../src/Race.js");
-const Race = RaceModule.default;
-const CarModule = await import("../src/Car.js");
-const Car = CarModule.default;
+let Race;
+let Car;
+
+beforeAll(async () => {
+  const RaceModule = await import("../src/Race.js");
+  Race = RaceModule.default;
+  const CarModule = await import("../src/Car.js");
+  Car = CarModule.default;
+});
 
 describe("Car", () => {
   test("move: true면 전진, false면 정지", () => {

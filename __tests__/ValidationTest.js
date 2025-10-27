@@ -1,4 +1,8 @@
-const validation = await import("../src/validation.js");
+let validation;
+
+beforeAll(async () => {
+  validation = await import("../src/validation.js");
+});
 
 describe("validation", () => {
   test("이름 파싱 정상", () => {
